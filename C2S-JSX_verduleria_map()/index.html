@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>verduleria</title>
+  </head>
+  <body>
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+    <!-- BABEL LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      //   const frutasEnStock = ["manzana", "pera", "naranja"];
+      //   const frutasSinStock = ["kiwi", "mango", "banana"];
+
+      //   const enStock = frutasEnStock.map((fruta) => (
+      //     <li key={fruta.toString()}> {fruta}</li>
+      //   ));
+      //   const sinStock = frutasSinStock.map((fruta) => (
+      //     <li key={fruta.toString()}> {fruta}</li>
+      //   ));
+      const frutas = [
+        {
+          fruta: "manzana",
+          stock: true,
+        },
+        {
+          fruta: "pera",
+          stock: false,
+        },
+        {
+          fruta: "naranja",
+          stock: true,
+        },
+        {
+          fruta: "kiwi",
+          stock: false,
+        },
+        {
+          fruta: "mango",
+          stock: false,
+        },
+        {
+          fruta: "banana",
+          stock: true,
+        },
+      ];
+      const enStock = [];
+      const sinStock = [];
+
+      // *************** no me salio con map() *********
+      //   frutas.map((fruta) => {
+      //     if (
+      //       !frutas.stock
+      //         ? enStock.push(fruta.fruta)
+      //         : sinStock.push(fruta.fruta)
+      //     );
+      //   });
+
+      for (let index = 0; index < frutas.length; index++) {
+        const fruta = frutas[index];
+        if (
+          fruta.stock ? enStock.push(fruta.fruta) : sinStock.push(fruta.fruta)
+        );
+      }
+
+      const liEnStock = enStock.map((fruta) => (
+        <li key={fruta.toString()}> {fruta}</li>
+      ));
+      const liSinStock = sinStock.map((fruta) => (
+        <li key={fruta.toString()}> {fruta}</li>
+      ));
+
+      const tituloStock = <h2> Frutas en stock</h2>;
+      const listaStock = <ul>{liEnStock}</ul>;
+
+      const tituloSinStock = <h2> Frutas sin stock</h2>;
+      const listaSinStock = <ul>{liSinStock}</ul>;
+
+      const div = (
+        <div>
+          {tituloStock}
+          {listaStock}
+          {tituloSinStock}
+          {listaSinStock}
+        </div>
+      );
+
+      ReactDOM.render(div, document.querySelector("#root"));
+    </script>
+  </body>
+</html>
