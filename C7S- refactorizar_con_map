@@ -1,0 +1,24 @@
+import React from "react";
+
+class App extends React.Component {
+  render() {
+    const saludo = ["HOLA", "HOLA", "HOLA", "MUNDO"];
+
+    return (
+      <ul>
+        {saludo.map((palabra, index) => (
+          <li key={palabra + index}>{palabra}</li>
+        ))}
+      </ul>
+
+      // <div>
+      /* <h1>HOLA</h1>
+      <h1>HOLA</h1>
+      <h1>HOLA</h1>
+      <h1>MUNDO</h1> */
+      // </div>
+    );
+  }
+}
+
+export default App;
