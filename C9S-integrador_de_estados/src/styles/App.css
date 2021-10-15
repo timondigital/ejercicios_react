@@ -1,7 +1,9 @@
-body{
+body {
   background-color: black;
 }
-
+.containerAll {
+  display: "flex";
+}
 .container {
   background: url("../images/pokedex.jpg") black;
   background-repeat: no-repeat;
@@ -13,7 +15,7 @@ body{
   justify-content: space-between;
 }
 
-#pokemonImg{
+#pokemonImg {
   width: 300px;
   margin-top: 300px;
   margin-left: 60px;

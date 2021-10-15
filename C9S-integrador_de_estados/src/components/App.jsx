@@ -60,6 +60,8 @@ export default class App extends Component {
         if (index !== 0)
           phrase = `${phrase} and ${this.state.pokemon[2][index]}`;
       }
+      console.log(this.state.pokemon[2]);
+      console.log(this.state.pokemon[2].length);
       return phrase;
     }
   };
@@ -70,7 +72,7 @@ export default class App extends Component {
     */
 
     return (
-      <div style={{ display: "flex" }}>
+      <div className="containerAll" style={{ display: "flex" }}>
         <div className="container">
           <img
             id="pokemonImg"
